@@ -28,6 +28,17 @@ public:
 };
 
 //using bit manipulation
+
+/*
+Let's take some good exampes :
+number->binary form
+3->0000 0011
+4->0000 0100
+5->0000 0101
+6->0000 0110
+7->0000 0111
+8->0000 1000
+*/
 class Solution {
 public:
     bool isPowerOfTwo(int n) {
@@ -37,7 +48,7 @@ public:
         // as every 2^x has only onw true bit 
         // anding operation with its previous integer gives alway 0
         // 8 -> 1000 , 7 -> 0111 => 8 & 7 = 0
-          return ((n & n-1) == 0)
+          return ((n&(n-1))==0);
 
     }
 };
