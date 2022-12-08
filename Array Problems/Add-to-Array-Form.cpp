@@ -15,10 +15,25 @@ Output: [4,5,5]
 Explanation: 274 + 181 = 455
 **/
 
+/*
+Approach:- Array to Array m hi addition kr rhe h n
+ jo carry ayega usko next element m add krke
+carry bhejte rhenge element m
+
+Addition last index se start Kiya
+
+For loop m k>0 to allow carry forward
+
+While loop to add the last carry to first index 
+if carry is greater than 0
+
+*/
+
 class Solution {
 public:
     vector<int> addToArrayForm(vector<int>& num, int K) {
-         for (int i = num.size() - 1; i >= 0 && K > 0; --i) {
+         for (int i = num.size() - 1; i >= 0 && K > 0; --i)
+       {
             num[i] += K;
             K = num[i] / 10;
             num[i] %= 10;
