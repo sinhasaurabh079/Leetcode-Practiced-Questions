@@ -34,10 +34,6 @@ Constraints:
 // The API isBadVersion is defined for you.
 // bool isBadVersion(int version);
 
-// Iss question m hme pehla bad version kis index pr h use kam search m btana tha
-
-// Binary Search Implementation use hua ismein
-
 class Solution {
 public:
     int firstBadVersion(int n) {
@@ -49,7 +45,9 @@ public:
         int result = n;  // bcoz last version is bad as given and we need to find the first ad version in the given array
         while(low <= high)
         {   
-            mid = (low+high)/2;
+            // mid = (low+high)/2;  //avoid this for caln
+            // if both low n high are INT_MAX then the overflow condition will reached , to avoid this use
+            mid = low + (high - low)/2;
             if(isBadVersion(mid))
              {
                  result = mid;   // yha bad version mil gya ab check krenge ki isse pehle koi bad data h ki nhi
@@ -60,7 +58,6 @@ public:
                 low = mid + 1; // agr upr wala good version dega mtlb bad version aage milega
              }
         }
-        return result;
-        
+        return result; 
     }
 };
