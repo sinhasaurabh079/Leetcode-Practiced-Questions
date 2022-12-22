@@ -3,7 +3,7 @@
 ` On observation of different Roman numbers we come up with 2 observations: `
 
 
-    When the Roman numerals when read from LEFT to RIGHT, are in non-increasing order, then they all get summed up.
+ 1.When the Roman numerals when read from LEFT to RIGHT, are in non-increasing order, then they all get summed up.
     for example :
 
     III > All of them individually are of value 1 => 1 + 1 + 1 = 3
