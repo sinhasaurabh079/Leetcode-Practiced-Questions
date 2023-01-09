@@ -9,50 +9,33 @@
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
-// using recursion
-// in this wee are calling both the left and right child nodes of the current node.
-class Solution {
-private:
-   void helper(TreeNode* root,vector<int>& nodes)
-   {
-       if(root==NULL)
-         return;
-       ans.push_back(root->val);
-       helper(root->left,nodes);
-       helper(root->right,nodes); 
-   }
 
+// using iterative approach ver-1
+class Solution {
 public:
-    vector<int>ans;   
-    vector<int> preorderTraversal(TreeNode* root) { 
-        helper(root,ans);
-       return ans;  
+    vector<int> preorderTraversal(TreeNode* root) {
+
+        vector<int>ans;
+        stack<TreeNode*> st;
+        st.push(root);
+
+        while(!st.empty()){
+            TreeNode* curr_node = st.top();
+            st.pop();
+
+            if(curr_node != nullptr)
+            {
+                ans.push_back(curr_node->val);
+                st.push(curr_node->right);
+                st.push(curr_node->left);
+            }
+        }
+        return ans;
     }
 };
 
-/*
 
-// in this we are calling root node
-class Solution {
-private:
-   void preorder(TreeNode* root)
-   {
-       if(root==NULL)
-         return;
-       ans.push_back(root->val);
-       preorder(root->left);
-       preorder(root->right); 
-   }
-
-public:
-    vector<int>ans;   
-    vector<int> preorderTraversal(TreeNode* root) { 
-        preorder(root);
-       return ans;  
-    }
-};
-
-// iterative approach
+// iterative approach ver-2
 
 class Solution {
 public:
@@ -86,4 +69,52 @@ public:
        return ans;  
     }
 };
-*/
+
+
+
+
+// using recursion
+
+
+// in this wee are calling both the left and right child nodes of the current node.
+class Solution {
+private:
+   void helper(TreeNode* root,vector<int>& nodes)
+   {
+       if(root==NULL)
+         return;
+       ans.push_back(root->val);
+       helper(root->left,nodes);
+       helper(root->right,nodes); 
+   }
+
+public:
+    vector<int>ans;   
+    vector<int> preorderTraversal(TreeNode* root) { 
+        helper(root,ans);
+       return ans;  
+    }
+};
+
+
+
+// in this we are calling root node
+class Solution {
+private:
+   void preorder(TreeNode* root)
+   {
+       if(root==NULL)
+         return;
+       ans.push_back(root->val);
+       preorder(root->left);
+       preorder(root->right); 
+   }
+
+public:
+    vector<int>ans;   
+    vector<int> preorderTraversal(TreeNode* root) { 
+        preorder(root);
+       return ans;  
+    }
+};
+
