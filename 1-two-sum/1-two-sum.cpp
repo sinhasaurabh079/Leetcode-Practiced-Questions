@@ -14,6 +14,7 @@ public:
                     break;
                 }
             }
+            // ignore this
             // if(index.size()==2)
             //     break;  // agr index=2 hua mtlb two sum mil gya
         }
