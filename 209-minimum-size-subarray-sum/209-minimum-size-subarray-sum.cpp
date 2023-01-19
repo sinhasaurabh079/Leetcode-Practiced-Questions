@@ -25,11 +25,8 @@ public:
                 cur_size--;   
             }
         }
-        if(flag)
-           return min_size;
-        else
-           return 0;     
-    } 
+        return flag ? min_size : 0;     
+    }  
 };
 
 /*
