@@ -1,5 +1,10 @@
 class Solution {
 public:
+     Solution(){
+        ios::sync_with_stdio(0);
+        cin.tie(0);
+        cout.tie(0);
+    }
     void solve(vector<int>&nums,int index,vector<int>&output,set<vector<int>>&ans)
     {
         if(index >= nums.size()){
