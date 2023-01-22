@@ -42,3 +42,23 @@ public:
         return sum;
     }
 };
+
+class Solution {
+public:
+    Solution(){ 
+    ios::sync_with_stdio(false);
+    cin.tie(0);
+    cout.tie(0);
+    }
+    int alternateDigitSum(int n) {
+        int sum=0;
+        int sign=1;
+        while(n)
+        {
+            sign *= -1;
+            sum += n%10 *sign;
+            n/=10;
+        }
+        return sum*sign;
+    }
+};
