@@ -9,7 +9,7 @@ public:
 
         // Approach :
         //  1. Checking letter of curr and next word are they in newly contructed order or not
-        //  2. Since we are checking two words smallestt of them is considered for inner loop
+        //  2. Since we are checking two words smallest of them is considered for inner loop
            
         for(int i=0;i<words.size()-1;i++){
              string curr = words[i];
