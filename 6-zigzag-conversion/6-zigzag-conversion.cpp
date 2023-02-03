@@ -4,7 +4,7 @@ public:
         if(numRows==1 || numRows==s.length())
           return s;
         // creating bucket
-        vector<string> bucket(numRows,"");
+        vector<string> bucket(numRows);
         // index helps to oscillate in zig zag manner in numRows(say n) bucket
         int index=0;
         // step is 1 untill we reach nth row (bucket) 
