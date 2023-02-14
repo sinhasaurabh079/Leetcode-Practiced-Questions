@@ -24,4 +24,4 @@ Constraints:
     a and b consist only of '0' or '1' characters.
     Each string does not contain leading zeros except for the zero itself.
 
-<p>Link<a href = "https://leetcode.com/problems/add-binary/"></a></p>
+<a href = "https://leetcode.com/problems/add-binary/">Problem Link</a>
