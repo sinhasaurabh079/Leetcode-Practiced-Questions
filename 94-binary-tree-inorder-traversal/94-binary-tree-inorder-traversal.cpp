@@ -10,6 +10,32 @@
  * };
  */
 class Solution {
+public:  
+    // iterative approach, there is alo morris traversal check out
+    vector<int> inorderTraversal(TreeNode* root) {
+       vector<int> arr;
+       stack<TreeNode*> st;
+       while(root || !st.empty()){
+           while(root){
+               st.push(root);
+               root = root->left;
+           }
+           root = st.top();
+           st.pop();
+           arr.push_back(root->val);
+           root = root->right;
+       } 
+       return arr; 
+        
+       // tc = O(n)
+       // sc = O(n) 
+    }
+};
+
+/*
+// recursive approach
+
+class Solution {
 public:
     vector<int> array;
     void inOrder(TreeNode* root){
@@ -24,5 +50,9 @@ public:
         // inorder traversal calling up
         inOrder(root);
         return array;
+        
+        // tc = O(n)
+        // sc = O(n)
     }
 };
+*/
