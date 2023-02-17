@@ -32,7 +32,7 @@ public:
     }
 };
 
-/*
+
 // recursive approach
 
 class Solution {
@@ -55,4 +55,3 @@ public:
         // sc = O(n)
     }
 };
-*/
