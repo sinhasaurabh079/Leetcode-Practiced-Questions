@@ -12,7 +12,8 @@
 class Solution {
 public:
     TreeNode* invertTree(TreeNode* root) {
-        
+        // doing postorder processing (LRr or RLr)
+        // i.e. calling right , then left and then processing
         // pehla right subtree k last node tk gye phir left subtree k left tk gye
         // swap krdiya
         // function returning m yeh same process sbke liyr repeat hoga
