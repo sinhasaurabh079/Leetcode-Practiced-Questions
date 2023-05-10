@@ -2,22 +2,25 @@ class Solution {
 public:
     int majorityElement(vector<int>& nums) {
       // By Moore Voting Algorithm
-      // -> focuses on choosing candidate for mamjority 
+      // -> focuses on choosing candidate for majority 
       // agr same aadmi ko bar bar vote mil rha h toh uski majority h wrna nhi
       // jb same element encounter hoga toh count ko badhayengey otherwise ghatayengey
       // jb count = 0 ho jayega tb next candidate choose krengey for majority
       // at last jo majority m hoga wo majority variable m hoga
-        int count =0;
-        int majority;
-        for(int x:nums){
-          if(count==0)
-             majority = x;
-          if(x==majority)
-             count++;
-          else
-             count--;      
+      // jitni bar leader dikhega use vote milega agr koi dusra
+        int vote=0;
+        int leader;
+        for(int i=0;i<nums.size();i++){
+           if(vote==0){                 // new leader choosen having one vote
+              leader = nums[i];
+              vote=1; 
+           }
+           else if(leader == nums[i])    // vote usi leader ko mil rhe h
+              vote++;
+           else                        // voter changed their leader and give vote them
+              vote--;   
         }
-        return majority;
+        return leader;
     }
 };
 
